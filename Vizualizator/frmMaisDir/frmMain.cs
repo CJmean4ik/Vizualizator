@@ -1,13 +1,19 @@
+using Vizualizator.Theme;
+using Vizualizator.Theme.Images.ImageBinder;
+
 namespace Vizualizator
 {
     public partial class frmMain : Form
     {
-        private bool isMousePress = false;
+        private bool isMousePress;
         private Point _clickPoint;
         private Point _formStartPoint;
+        private IThemeChanger<Control> themeChanger;
+        private bool isLightTheme;
         public frmMain()
         {
             InitializeComponent();
+            themeChanger  = new FormThemeChanger(new ButtonImageBinder(this),new LabelImageBinder(this));
         }      
         private void panel2_MouseMove(object sender, MouseEventArgs e)
         {
@@ -37,11 +43,7 @@ namespace Vizualizator
             _formStartPoint = Location;
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
+       
         private void btnClose_Click_1(object sender, EventArgs e)
         {
             this.Close();
@@ -53,6 +55,25 @@ namespace Vizualizator
         }
 
         private void themeButton_Click(object sender, EventArgs e)
+        {
+            if (!isLightTheme)
+            {
+                themeChanger.ChangeToLight(this);
+                themeChanger.ChangeToDarkImage();
+                isLightTheme = true;
+                return;
+            }
+            if (isLightTheme)
+            {
+                themeChanger.ChangeToDark(this);
+                themeChanger.ChangeToLightImage();
+                isLightTheme = false;
+                return;
+            }
+
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
         {
 
         }

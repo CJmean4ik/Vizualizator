@@ -118,10 +118,58 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="darkMode" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="bolt_d" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bolt_d.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bolt_l" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bolt (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkMode_d" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dark_d.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkMode_l" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\darkMode.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="lightMode" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="download_d" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\download_d.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="download_l" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\download (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="flame_d" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\flame_d.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="flame_l" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\flame.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lightMode_d" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\light_d.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lightMode_l" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\lightMode.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="page_break_d" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\page-break_d.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="page_break_l" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\page-break.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="refresh_d" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\refresh_d.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="refresh_l" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\refresh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="toggle_off_d" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\toggle-off_d.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="toggle_off_l" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\toggle-off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wifi_slash_d" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wifi-slash_d.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wifi_slash_l" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wifi-slash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

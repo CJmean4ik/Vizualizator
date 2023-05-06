@@ -38,10 +38,10 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnConvertDB = new System.Windows.Forms.Button();
-            this.btnSelectDB = new System.Windows.Forms.Button();
+            this.btnSelectDb = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btn = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -55,11 +55,11 @@
             this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.offOSU = new System.Windows.Forms.Label();
+            this.flame = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.disconnectOSU = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -96,7 +96,7 @@
             this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.btnConvertDB);
-            this.panel1.Controls.Add(this.btnSelectDB);
+            this.panel1.Controls.Add(this.btnSelectDb);
             this.panel1.Location = new System.Drawing.Point(0, 660);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(793, 68);
@@ -180,30 +180,30 @@
             this.btnConvertDB.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnConvertDB.UseVisualStyleBackColor = false;
             // 
-            // btnSelectDB
+            // btnSelectDb
             // 
-            this.btnSelectDB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.btnSelectDB.FlatAppearance.BorderSize = 0;
-            this.btnSelectDB.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
-            this.btnSelectDB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSelectDB.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnSelectDB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(236)))));
-            this.btnSelectDB.Image = ((System.Drawing.Image)(resources.GetObject("btnSelectDB.Image")));
-            this.btnSelectDB.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSelectDB.Location = new System.Drawing.Point(3, 3);
-            this.btnSelectDB.Name = "btnSelectDB";
-            this.btnSelectDB.Size = new System.Drawing.Size(138, 62);
-            this.btnSelectDB.TabIndex = 0;
-            this.btnSelectDB.Text = "Выбор БД";
-            this.btnSelectDB.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSelectDB.UseVisualStyleBackColor = false;
-            this.btnSelectDB.Click += new System.EventHandler(this.btnSelectDB_Click);
+            this.btnSelectDb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.btnSelectDb.FlatAppearance.BorderSize = 0;
+            this.btnSelectDb.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
+            this.btnSelectDb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSelectDb.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSelectDb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(236)))));
+            this.btnSelectDb.Image = ((System.Drawing.Image)(resources.GetObject("btnSelectDb.Image")));
+            this.btnSelectDb.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSelectDb.Location = new System.Drawing.Point(3, 3);
+            this.btnSelectDb.Name = "btnSelectDb";
+            this.btnSelectDb.Size = new System.Drawing.Size(138, 62);
+            this.btnSelectDb.TabIndex = 0;
+            this.btnSelectDb.Text = "Выбор БД";
+            this.btnSelectDb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSelectDb.UseVisualStyleBackColor = false;
+            this.btnSelectDb.Click += new System.EventHandler(this.btnSelectDB_Click);
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.panel4.Controls.Add(this.button7);
-            this.panel4.Controls.Add(this.button6);
+            this.panel4.Controls.Add(this.btn);
             this.panel4.Controls.Add(this.button5);
             this.panel4.Controls.Add(this.button4);
             this.panel4.Controls.Add(this.button3);
@@ -236,25 +236,25 @@
             this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button7.UseVisualStyleBackColor = false;
             // 
-            // button6
+            // btn
             // 
-            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(236)))));
-            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button6.Location = new System.Drawing.Point(3, 635);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(194, 68);
-            this.button6.TabIndex = 11;
-            this.button6.Text = "Показать всё";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.UseVisualStyleBackColor = false;
+            this.btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.btn.FlatAppearance.BorderSize = 0;
+            this.btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
+            this.btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(236)))));
+            this.btn.Image = ((System.Drawing.Image)(resources.GetObject("btn.Image")));
+            this.btn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn.Location = new System.Drawing.Point(3, 635);
+            this.btn.Name = "btn";
+            this.btn.Size = new System.Drawing.Size(194, 68);
+            this.btn.TabIndex = 11;
+            this.btn.Text = "Показать всё";
+            this.btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn.UseVisualStyleBackColor = false;
             // 
             // button5
             // 
@@ -423,8 +423,10 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.pnlState);
+            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox1.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(236)))));
             this.groupBox1.Location = new System.Drawing.Point(3, 16);
@@ -438,11 +440,11 @@
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.offOSU);
+            this.groupBox2.Controls.Add(this.flame);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.disconnectOSU);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label4);
@@ -452,36 +454,37 @@
             this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(236)))));
             this.groupBox2.Location = new System.Drawing.Point(6, 78);
             this.groupBox2.Name = "groupBox2";
+            this.groupBox2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.groupBox2.Size = new System.Drawing.Size(393, 173);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Количество";
             // 
-            // label11
+            // offOSU
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("JetBrains Mono", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label11.Image = ((System.Drawing.Image)(resources.GetObject("label11.Image")));
-            this.label11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label11.Location = new System.Drawing.Point(16, 143);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(210, 22);
-            this.label11.TabIndex = 10;
-            this.label11.Text = "    Отключенных АСУ:";
+            this.offOSU.AutoSize = true;
+            this.offOSU.Font = new System.Drawing.Font("JetBrains Mono", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.offOSU.Image = ((System.Drawing.Image)(resources.GetObject("offOSU.Image")));
+            this.offOSU.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.offOSU.Location = new System.Drawing.Point(16, 143);
+            this.offOSU.Name = "offOSU";
+            this.offOSU.Size = new System.Drawing.Size(210, 22);
+            this.offOSU.TabIndex = 10;
+            this.offOSU.Text = "    Отключенных АСУ:";
             // 
-            // label7
+            // flame
             // 
-            this.label7.AutoSize = true;
-            this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label7.Font = new System.Drawing.Font("JetBrains Mono", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Image = ((System.Drawing.Image)(resources.GetObject("label7.Image")));
-            this.label7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label7.Location = new System.Drawing.Point(16, 31);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(150, 22);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "    Пожаров:  ";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.flame.AutoSize = true;
+            this.flame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.flame.Font = new System.Drawing.Font("JetBrains Mono", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.flame.Image = ((System.Drawing.Image)(resources.GetObject("flame.Image")));
+            this.flame.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.flame.Location = new System.Drawing.Point(16, 31);
+            this.flame.Name = "flame";
+            this.flame.Size = new System.Drawing.Size(150, 22);
+            this.flame.TabIndex = 6;
+            this.flame.Text = "    Пожаров:  ";
+            this.flame.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label9
             // 
@@ -504,20 +507,21 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(23, 25);
             this.label2.TabIndex = 1;
+            this.label2.Tag = "2";
             this.label2.Text = "0";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label10
+            // disconnectOSU
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("JetBrains Mono", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label10.Image = ((System.Drawing.Image)(resources.GetObject("label10.Image")));
-            this.label10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label10.Location = new System.Drawing.Point(16, 115);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(230, 22);
-            this.label10.TabIndex = 9;
-            this.label10.Text = "    Нет приёма от АСУ:";
+            this.disconnectOSU.AutoSize = true;
+            this.disconnectOSU.Font = new System.Drawing.Font("JetBrains Mono", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.disconnectOSU.Image = ((System.Drawing.Image)(resources.GetObject("disconnectOSU.Image")));
+            this.disconnectOSU.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.disconnectOSU.Location = new System.Drawing.Point(16, 115);
+            this.disconnectOSU.Name = "disconnectOSU";
+            this.disconnectOSU.Size = new System.Drawing.Size(230, 22);
+            this.disconnectOSU.TabIndex = 9;
+            this.disconnectOSU.Text = "    Нет приёма от АСУ:";
             // 
             // label3
             // 
@@ -527,6 +531,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(23, 25);
             this.label3.TabIndex = 2;
+            this.label3.Tag = "3";
             this.label3.Text = "0";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -550,6 +555,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(23, 25);
             this.label4.TabIndex = 3;
+            this.label4.Tag = "4";
             this.label4.Text = "0";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -561,6 +567,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(23, 25);
             this.label5.TabIndex = 4;
+            this.label5.Tag = "5";
             this.label5.Text = "0";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -572,6 +579,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(23, 25);
             this.label6.TabIndex = 5;
+            this.label6.Tag = "6";
             this.label6.Text = "0";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -583,8 +591,9 @@
             this.pnlState.Controls.Add(this.label1);
             this.pnlState.Location = new System.Drawing.Point(6, 32);
             this.pnlState.Name = "pnlState";
-            this.pnlState.Size = new System.Drawing.Size(393, 67);
+            this.pnlState.Size = new System.Drawing.Size(393, 40);
             this.pnlState.TabIndex = 0;
+            this.pnlState.Tag = "1";
             // 
             // label1
             // 
@@ -620,7 +629,7 @@
             this.themeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.themeButton.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.themeButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(236)))));
-            this.themeButton.Image = global::Vizualizator.Properties.Resources.lightMode;
+            this.themeButton.Image = global::Vizualizator.Properties.Resources.lightMode_l;
             this.themeButton.Location = new System.Drawing.Point(762, 0);
             this.themeButton.Name = "themeButton";
             this.themeButton.Size = new System.Drawing.Size(31, 29);
@@ -674,7 +683,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(787, 597);
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // selectDataBaseFile
             // 
@@ -696,6 +704,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMain";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -719,7 +728,7 @@
         private Panel panel4;
         private Panel panel2;
         private Button btnConvertDB;
-        private Button btnSelectDB;
+        private Button btnSelectDb;
         private TextBox textBox3;
         private TextBox textBox2;
         private TextBox textBox1;
@@ -728,11 +737,11 @@
         private PictureBox pictureBox1;
         private GroupBox groupBox1;
         private GroupBox groupBox2;
-        private Label label11;
-        private Label label7;
+        private Label offOSU;
+        private Label flame;
         private Label label9;
         private Label label2;
-        private Label label10;
+        private Label disconnectOSU;
         private Label label3;
         private Label label8;
         private Label label4;
@@ -752,11 +761,21 @@
         private Button button2;
         private Button button1;
         private Button button7;
-        private Button button6;
+        private Button btn;
         private Button btnClose;
         private PictureBox pictureBox2;
         private Label label12;
         private OpenFileDialog selectDataBaseFile;
         private Button themeButton;
+
+        public Button BtnConvertDB { get => btnConvertDB; set => btnConvertDB = value; }
+        public Button BtnSelectDb { get => btnSelectDb; set => btnSelectDb = value; }
+        public Button ThemeButton { get => themeButton; set => themeButton = value; }
+        
+        public Label OffOSU { get => offOSU; set => offOSU = value; }
+        public Label Flame { get => flame; set => flame = value; }
+        public Label DisconnectOSU { get => disconnectOSU; set => disconnectOSU = value; }
+        public Label Label8 { get => label8; set => label8 = value; }
+        public Label Label9 { get => label9; set => label9 = value; }
     }
 }

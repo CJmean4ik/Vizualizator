@@ -4,6 +4,7 @@
     {
         void ChangeToDark(T form);
         void ChangeToLight(T form);
-
+        void ChangeToDarkImage();
+        void ChangeToLightImage();
     }
 }
