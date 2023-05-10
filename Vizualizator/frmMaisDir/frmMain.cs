@@ -1,3 +1,4 @@
+using Vizualizator.DataBase.OleProvider;
 using Vizualizator.Theme;
 using Vizualizator.Theme.Images.ImageBinder;
 
@@ -10,10 +11,12 @@ namespace Vizualizator
         private Point _formStartPoint;
         private IThemeChanger<Control> themeChanger;
         private bool isLightTheme;
+        public OleDataBase DataBase { get; set; }
         public frmMain()
         {
             InitializeComponent();
             themeChanger  = new FormThemeChanger(new ButtonImageBinder(this),new LabelImageBinder(this));
+            DataBase = new OleDataBase();
         }      
         private void panel2_MouseMove(object sender, MouseEventArgs e)
         {
@@ -49,9 +52,17 @@ namespace Vizualizator
             this.Close();
         }
 
-        private void btnSelectDB_Click(object sender, EventArgs e)
+        private async void btnSelectDB_Click(object sender, EventArgs e)
         {
-            selectDataBaseFile.ShowDialog();
+
+            selectDataBaseFile.ShowDialog(); 
+            DataBase.FilePath = selectDataBaseFile.FileName;
+
+            DataBase.CreateConnectionString();
+
+            DataBase.CreateOleDbConnection();
+
+            await DataBase.OpenConnectAsync();
         }
 
         private void themeButton_Click(object sender, EventArgs e)
@@ -74,6 +85,11 @@ namespace Vizualizator
         }
 
         private void frmMain_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnOnData_Click(object sender, EventArgs e)
         {
 
         }

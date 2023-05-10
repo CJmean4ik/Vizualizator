@@ -131,6 +131,7 @@
             this.btnOnData.TabIndex = 5;
             this.btnOnData.Text = "Вкл.данные";
             this.btnOnData.UseVisualStyleBackColor = false;
+            this.btnOnData.Click += new System.EventHandler(this.btnOnData_Click);
             // 
             // textBox3
             // 
