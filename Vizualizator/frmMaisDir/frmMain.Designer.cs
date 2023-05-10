@@ -33,12 +33,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnResetFire = new System.Windows.Forms.Button();
-            this.btnOnData = new System.Windows.Forms.Button();
+            this.btnOffBd = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnConvertDB = new System.Windows.Forms.Button();
             this.btnSelectDb = new System.Windows.Forms.Button();
+            this.stateText = new System.Windows.Forms.Label();
+            this.stateLabel = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.button7 = new System.Windows.Forms.Button();
             this.btn = new System.Windows.Forms.Button();
@@ -91,15 +93,15 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.panel1.Controls.Add(this.btnResetFire);
-            this.panel1.Controls.Add(this.btnOnData);
+            this.panel1.Controls.Add(this.btnOffBd);
             this.panel1.Controls.Add(this.textBox3);
             this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.btnConvertDB);
             this.panel1.Controls.Add(this.btnSelectDb);
-            this.panel1.Location = new System.Drawing.Point(0, 660);
+            this.panel1.Location = new System.Drawing.Point(0, 659);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(793, 68);
+            this.panel1.Size = new System.Drawing.Size(793, 69);
             this.panel1.TabIndex = 0;
             // 
             // btnResetFire
@@ -117,30 +119,30 @@
             this.btnResetFire.Text = "Сброс пожара";
             this.btnResetFire.UseVisualStyleBackColor = false;
             // 
-            // btnOnData
+            // btnOffBd
             // 
-            this.btnOnData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.btnOnData.FlatAppearance.BorderSize = 0;
-            this.btnOnData.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
-            this.btnOnData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOnData.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnOnData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(236)))));
-            this.btnOnData.Location = new System.Drawing.Point(507, 3);
-            this.btnOnData.Name = "btnOnData";
-            this.btnOnData.Size = new System.Drawing.Size(119, 62);
-            this.btnOnData.TabIndex = 5;
-            this.btnOnData.Text = "Вкл.данные";
-            this.btnOnData.UseVisualStyleBackColor = false;
-            this.btnOnData.Click += new System.EventHandler(this.btnOnData_Click);
+            this.btnOffBd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.btnOffBd.FlatAppearance.BorderSize = 0;
+            this.btnOffBd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
+            this.btnOffBd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOffBd.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnOffBd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(236)))));
+            this.btnOffBd.Location = new System.Drawing.Point(483, 3);
+            this.btnOffBd.Name = "btnOffBd";
+            this.btnOffBd.Size = new System.Drawing.Size(147, 62);
+            this.btnOffBd.TabIndex = 5;
+            this.btnOffBd.Text = "Отключить БД";
+            this.btnOffBd.UseVisualStyleBackColor = false;
+            this.btnOffBd.Click += new System.EventHandler(this.btnOnData_Click);
             // 
             // textBox3
             // 
             this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox3.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox3.Location = new System.Drawing.Point(419, 24);
+            this.textBox3.Location = new System.Drawing.Point(409, 24);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(81, 22);
+            this.textBox3.Size = new System.Drawing.Size(68, 22);
             this.textBox3.TabIndex = 4;
             // 
             // textBox2
@@ -148,7 +150,7 @@
             this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox2.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.Location = new System.Drawing.Point(387, 24);
+            this.textBox2.Location = new System.Drawing.Point(377, 24);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(26, 22);
             this.textBox2.TabIndex = 3;
@@ -160,7 +162,7 @@
             this.textBox1.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox1.Location = new System.Drawing.Point(346, 24);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(35, 22);
+            this.textBox1.Size = new System.Drawing.Size(25, 22);
             this.textBox1.TabIndex = 2;
             // 
             // btnConvertDB
@@ -200,6 +202,29 @@
             this.btnSelectDb.UseVisualStyleBackColor = false;
             this.btnSelectDb.Click += new System.EventHandler(this.btnSelectDB_Click);
             // 
+            // stateText
+            // 
+            this.stateText.AutoSize = true;
+            this.stateText.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.stateText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.stateText.Location = new System.Drawing.Point(896, 7);
+            this.stateText.Name = "stateText";
+            this.stateText.Size = new System.Drawing.Size(110, 21);
+            this.stateText.TabIndex = 12;
+            this.stateText.Tag = "7";
+            this.stateText.Text = "в ожидании";
+            // 
+            // stateLabel
+            // 
+            this.stateLabel.AutoSize = true;
+            this.stateLabel.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.stateLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(236)))));
+            this.stateLabel.Location = new System.Drawing.Point(792, 7);
+            this.stateLabel.Name = "stateLabel";
+            this.stateLabel.Size = new System.Drawing.Size(110, 21);
+            this.stateLabel.TabIndex = 11;
+            this.stateLabel.Text = "Состояние:";
+            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
@@ -229,7 +254,7 @@
             this.button7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(236)))));
             this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
             this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button7.Location = new System.Drawing.Point(201, 636);
+            this.button7.Location = new System.Drawing.Point(201, 633);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(207, 68);
             this.button7.TabIndex = 12;
@@ -249,7 +274,7 @@
             this.btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(236)))));
             this.btn.Image = ((System.Drawing.Image)(resources.GetObject("btn.Image")));
             this.btn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn.Location = new System.Drawing.Point(3, 635);
+            this.btn.Location = new System.Drawing.Point(3, 633);
             this.btn.Name = "btn";
             this.btn.Size = new System.Drawing.Size(194, 68);
             this.btn.TabIndex = 11;
@@ -382,7 +407,7 @@
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(405, 315);
+            this.dataGridView1.Size = new System.Drawing.Size(405, 313);
             this.dataGridView1.TabIndex = 2;
             // 
             // TypeASU
@@ -610,9 +635,11 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.panel2.Controls.Add(this.stateText);
             this.panel2.Controls.Add(this.themeButton);
             this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.pictureBox2);
+            this.panel2.Controls.Add(this.stateLabel);
             this.panel2.Controls.Add(this.btnClose);
             this.panel2.Location = new System.Drawing.Point(0, -1);
             this.panel2.Name = "panel2";
@@ -734,7 +761,7 @@
         private TextBox textBox2;
         private TextBox textBox1;
         private Button btnResetFire;
-        private Button btnOnData;
+        private Button btnOffBd;
         private PictureBox pictureBox1;
         private GroupBox groupBox1;
         private GroupBox groupBox2;
@@ -768,6 +795,8 @@
         private Label label12;
         private OpenFileDialog selectDataBaseFile;
         private Button themeButton;
+        private Label stateLabel;
+        private Label stateText;
 
         public Button BtnConvertDB { get => btnConvertDB; set => btnConvertDB = value; }
         public Button BtnSelectDb { get => btnSelectDb; set => btnSelectDb = value; }

@@ -15,18 +15,18 @@ namespace Vizualizator
         public frmMain()
         {
             InitializeComponent();
-            themeChanger  = new FormThemeChanger(new ButtonImageBinder(this),new LabelImageBinder(this));
-            DataBase = new OleDataBase();
-        }      
+            themeChanger = new FormThemeChanger(new ButtonImageBinder(this), new LabelImageBinder(this));
+
+        }
         private void panel2_MouseMove(object sender, MouseEventArgs e)
         {
             if (isMousePress)
             {
-                var cursorOffsetPoint = new Point( 
+                var cursorOffsetPoint = new Point(
                     Cursor.Position.X - _clickPoint.X,
                     Cursor.Position.Y - _clickPoint.Y);
 
-                Location = new Point( 
+                Location = new Point(
                     _formStartPoint.X + cursorOffsetPoint.X,
                     _formStartPoint.Y + cursorOffsetPoint.Y);
             }
@@ -46,7 +46,7 @@ namespace Vizualizator
             _formStartPoint = Location;
         }
 
-       
+
         private void btnClose_Click_1(object sender, EventArgs e)
         {
             this.Close();
@@ -54,15 +54,16 @@ namespace Vizualizator
 
         private async void btnSelectDB_Click(object sender, EventArgs e)
         {
-
-            selectDataBaseFile.ShowDialog(); 
+            DataBase = new OleDataBase();
+            selectDataBaseFile.ShowDialog();
             DataBase.FilePath = selectDataBaseFile.FileName;
-
             DataBase.CreateConnectionString();
 
             DataBase.CreateOleDbConnection();
 
             await DataBase.OpenConnectAsync();
+            stateText.ForeColor = Color.FromArgb(76, 175, 80);
+            stateText.Text = $"Подключен к {selectDataBaseFile.SafeFileName}";
         }
 
         private void themeButton_Click(object sender, EventArgs e)
@@ -89,9 +90,12 @@ namespace Vizualizator
 
         }
 
-        private void btnOnData_Click(object sender, EventArgs e)
+        private async void btnOnData_Click(object sender, EventArgs e)
         {
-
+            await DataBase.CloseConnectAsync();
+            stateText.ForeColor = Color.FromArgb(255, 128, 0);
+            stateText.Text = "В ожидании";
+            DataBase = null;
         }
     }
 }

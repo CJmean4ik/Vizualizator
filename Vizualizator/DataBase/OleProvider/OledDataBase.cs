@@ -1,5 +1,5 @@
 ﻿using System.Data.OleDb;
-using Vizualizator.DataBase.Provider.Interfaces;
+using Vizualizator.DataBase.OleProvider.Interfaces;
 
 namespace Vizualizator.DataBase.OleProvider
 {
@@ -50,7 +50,29 @@ namespace Vizualizator.DataBase.OleProvider
                 }
             }
         }
-
+        public async Task CloseConnectAsync()
+        {
+            try
+            {
+                if (OleDb == null)
+                {
+                    MessageBox.Show("\n Бд не подключена!");
+                    return;
+                }
+                
+                if (OleDb.State == System.Data.ConnectionState.Open)
+                {
+                    await OleDb.CloseAsync();
+                    return;
+                }
+              
+            }
+            catch (OleDbException ex)
+            {
+                MessageBox.Show(ex.Message + "\n Не удалось отключиться от БД");
+            }
+            
+        }
 
     }
 }

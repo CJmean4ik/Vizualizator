@@ -43,7 +43,7 @@ namespace Vizualizator.Theme
                 if (control is Label label)
                 {
                     int.TryParse((string)label.Tag, out int tag);
-                    if (tag == 2 || tag == 3 || tag == 4 || tag == 5 || tag == 6) return;
+                    if (tag == 2 || tag == 3 || tag == 4 || tag == 5 || tag == 6 || tag == 7) continue;
 
                     label.BackColor = _darkPaint.LabelDark;
                     label.ForeColor = _darkPaint.TextDark;
@@ -106,7 +106,7 @@ namespace Vizualizator.Theme
                 if (control is Label label)
                 {
                     int.TryParse((string)label.Tag, out int tag);
-                    if (tag == 2 || tag == 3 || tag == 4 || tag == 5 || tag == 6) return;
+                    if (tag == 2 || tag == 3 || tag == 4 || tag == 5 || tag == 6 || tag == 7) continue;
 
                     label.BackColor = _lightPaint.LabelLight;
                     label.ForeColor = _lightPaint.TextLight;
