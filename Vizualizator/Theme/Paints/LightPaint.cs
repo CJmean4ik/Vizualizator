@@ -26,7 +26,7 @@
                 ["BackgroundColor"] = Color.FromArgb(234, 233, 229),
                 ["BackColor"] = Color.FromArgb(189, 211, 204),
                 ["TextColor"] = TextLight,
-                ["SelectionColor"] = Color.FromArgb(234, 233, 229),
+                ["SelectionForeColor"] = Color.FromArgb(234, 233, 229),
                 ["SelectionBackColor"] = TextLight
             };
         }

@@ -103,10 +103,12 @@ namespace Vizualizator.FormsAndControls.Controls
             bool isComplete = InitialComPort();
 
             if (!isComplete) return;
-                       
-            if (!_comPortWorker.TryConnectToPort())
-                return;
 
+            _comPortWorker.ConnectToPort(out bool isSuccessful);
+            if (!isSuccessful) return;
+            
+
+            
             lblState.Text = $"Подключен к порту: {_comPortWorker.ComPort.PortName}";
             lblState.ForeColor = Color.FromArgb(76, 175, 80);
             btnOnCom.Enabled = false;
@@ -144,9 +146,10 @@ namespace Vizualizator.FormsAndControls.Controls
 
         private void btnOffCom_Click(object sender, EventArgs e)
         {
-            if (!_comPortWorker.TryDisconnectFromPort())
-                return;
+            _comPortWorker.DisconnectFromPort(out bool isSuccessful);
 
+            if (!isSuccessful)
+                return;
 
             lblState.Text = $"Не подключен";
             lblState.ForeColor = Color.FromArgb(255, 84, 84);

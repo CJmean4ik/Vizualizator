@@ -31,7 +31,7 @@ namespace Vizualizator.COM
             {
                 if (portNames[i] == comparedPort)
                     isInitialize = true;
-                    return true;
+                return true;
             }
             isInitialize = false;
             return false;
@@ -53,64 +53,77 @@ namespace Vizualizator.COM
                 MessageBox.Show(ex.Message);
                 return false;
             }
-
         }
-        public bool TryReceiveMessage(out string message)
+        public string ReceiveMessage(out bool isSuccessful)
         {
             if (!ComPort.IsOpen)
             {
                 MessageBox.Show("Port not open or close");
-                message = "";
-                return false;
+                isSuccessful = false;
+                return "";
             }
-
 
             try
             {
-                message = ComPort.ReadExisting();
-                return true;
+                string message = ComPort.ReadExisting();
+                isSuccessful = true;
+                return message;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                message = "";
-                return false;
-            }        
+                isSuccessful = false;
+                return "";
+            }
         }
 
-        public bool TryConnectToPort()
+        public void ConnectToPort(out bool isSuccessful)
         {
-            if (ComPort.IsOpen) return true;
+            if (ComPort.IsOpen)
+            {
+                isSuccessful = true;
+                return;
+            }
 
             try
             {
                 ComPort.Open();
-                return true;
+                isSuccessful = true;
+                return;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message + $"\nНе удалось подключиться к порту {ComPort.PortName}");
-                return false;
-            }         
+                isSuccessful = true;
+                return;
+            }
 
         }
-        public bool TryDisconnectFromPort()
+        public void DisconnectFromPort(out bool isSuccessful)
         {
-            if (!ComPort.IsOpen) return true;
+            if (!ComPort.IsOpen)
+            {
+                isSuccessful = true;
+                return;
+            }
+
             try
             {
                 ComPort.Close();
-                return true;
+                isSuccessful = true;
+                return;
             }
             catch (InvalidOperationException ex)
             {
                 MessageBox.Show(ex.Message);
-                return false;
+                isSuccessful = false;
+                return;
             }
             catch (IOException ex)
             {
                 MessageBox.Show(ex.Message);
-                return false;
+                isSuccessful = false;
+                return;
             }
         }
     }

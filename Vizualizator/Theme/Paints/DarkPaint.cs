@@ -30,9 +30,9 @@
                 ["BackgroundColor"] = Color.FromArgb(46, 46, 46),
                 ["BackColor"] = Color.FromArgb(31, 31, 31),
                 ["TextColor"] = TextDark,
-                ["SelectionColor"] = Color.FromArgb(46, 46, 46),
-                ["SelectionBackColor"] = TextDark
-            };
+                ["SelectionForeColor"] = TextDark,
+                ["SelectionBackColor"] = Color.FromArgb(46, 46, 46),
+        };
         }
     }
 }

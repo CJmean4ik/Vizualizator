@@ -1,5 +1,7 @@
-using System.Diagnostics;
+using System.Reflection;
+using Vizualizator.DataBase.Entity;
 using Vizualizator.DataBase.OleProvider;
+using Vizualizator.DataBase.Repository.ImplementRepositories;
 using Vizualizator.FormsAndControls.Controls;
 using Vizualizator.Theme;
 using Vizualizator.Theme.Images.ImageBinder;
@@ -13,11 +15,12 @@ namespace FormsAndControls.MainForm.Vizualizator
 
         private FormThemeChanger themeChanger;
         private ComPortSettingForm _comPortSetting;
+        private ASUModuleRepository asuModulerepository;
         public OleDataBase DataBase { get; set; }
 
         private bool isMousePress;
         private bool isLightTheme;
-        private bool _isConnected;
+        private bool _isAddedData;
 
         public frmMain()
         {
@@ -25,10 +28,11 @@ namespace FormsAndControls.MainForm.Vizualizator
             themeChanger = new FormThemeChanger(new ButtonImageBinder(this), new LabelImageBinder(this));
             _comPortSetting = new ComPortSettingForm(isLightTheme);
             _comPortSetting.Switcher = SwitchEnable;
+
         }
         private void frmMain_Load(object sender, EventArgs e)
         {
-
+            convertDataPanel.Visible = false;
         }
 
         #region DraggingForm
@@ -78,6 +82,8 @@ namespace FormsAndControls.MainForm.Vizualizator
             await DataBase.OpenConnectAsync();
             stateText.ForeColor = Color.FromArgb(76, 175, 80);
             stateText.Text = $"Подключен к {selectDataBaseFile.SafeFileName}";
+
+            asuModulerepository = new ASUModuleRepository(DataBase.OleDb);
         }
         private void themeButton_Click(object sender, EventArgs e)
         {
@@ -104,9 +110,11 @@ namespace FormsAndControls.MainForm.Vizualizator
                 MessageBox.Show("\n Бд не подключена!");
                 return;
             }
+          
             await DataBase.CloseConnectAsync();
             stateText.ForeColor = Color.FromArgb(255, 128, 0);
             stateText.Text = "В ожидании";
+            dataGridView2.Rows.Clear();
             DataBase = null;
         }
         private void btnWorkWithComPort_Click(object sender, EventArgs e)
@@ -129,6 +137,84 @@ namespace FormsAndControls.MainForm.Vizualizator
             }
             this.Activate();
             this.Enabled = true;
+        }
+
+
+
+        private async void btnConvertDB_Click(object sender, EventArgs e)
+        {
+            if (_isAddedData)
+            {
+                ShowConvertDataPanel();
+                return;
+            }
+
+            try
+            {
+                if (asuModulerepository == null)
+                {
+                      MessageBox.Show("Репозиторий который должен был считать данные с таблицы, не был проинициализирован.\nПроверьте" +
+                    "Подключение к БД ");
+                    return;
+                }
+                
+                var models = await Task.Run(() => asuModulerepository.GetAll());
+
+                if (models == null)
+                {
+                    MessageBox.Show("Нет данных для заполения DataGridView (Таблица)");
+                    return;
+                }
+                dataGridView2.Rows.Add(models.Count);
+                await Task.Run(() => InsertDataToCells(models));
+                _isAddedData = true;
+                ShowConvertDataPanel();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
+
+        }
+        private void InsertDataToCells(List<FullASUModule> models)
+        {
+            int COUT_ROWS = models.Count;
+           
+
+            for (int j = 0; j < COUT_ROWS; j++)
+            {     
+                dataGridView2.Rows[j].Cells[0].Value = models[j].Code;
+                dataGridView2.Rows[j].Cells[1].Value = models[j].NumberRecord;
+                dataGridView2.Rows[j].Cells[2].Value = models[j].NumberLine;
+                dataGridView2.Rows[j].Cells[3].Value = models[j].NumberPPK;
+                dataGridView2.Rows[j].Cells[4].Value = models[j].FactoryNumber;
+                dataGridView2.Rows[j].Cells[5].Value = models[j].CommandASU;
+                dataGridView2.Rows[j].Cells[6].Value = models[j].TypeASU;
+                dataGridView2.Rows[j].Cells[7].Value = models[j].NumberAutomatedControl;
+                dataGridView2.Rows[j].Cells[8].Value = models[j].AddresManagerASU;
+                dataGridView2.Rows[j].Cells[9].Value = models[j].RelatedAddresASU;
+                dataGridView2.Rows[j].Cells[10].Value = models[j].NumberZone;
+                dataGridView2.Rows[j].Cells[11].Value = models[j].Timer;
+                dataGridView2.Rows[j].Cells[12].Value = models[j].TransitionLevel;
+                dataGridView2.Rows[j].Cells[13].Value = models[j].DescriptionZone;
+                dataGridView2.Rows[j].Cells[14].Value = models[j].NumberImage;
+                dataGridView2.Rows[j].Cells[15].Value = models[j].CordinateASU;
+            }
+  
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            HideConvertDataPanel();
+
+
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

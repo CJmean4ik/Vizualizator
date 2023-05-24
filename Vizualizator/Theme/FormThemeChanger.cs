@@ -182,14 +182,14 @@ namespace Vizualizator.Theme
             dataGridView.BackgroundColor = colors["BackgroundColor"];
             dataGridView.DefaultCellStyle.BackColor = colors["BackColor"];
             dataGridView.DefaultCellStyle.ForeColor = colors["TextColor"];
-            dataGridView.DefaultCellStyle.SelectionForeColor = colors["SelectionColor"];
+            dataGridView.DefaultCellStyle.SelectionForeColor = colors["SelectionForeColor"];
             dataGridView.DefaultCellStyle.SelectionBackColor = colors["SelectionBackColor"];
         }
         private void ChangeHeadersColor(DataGridView dataGridView, Dictionary<string, Color> colors)
         {
             dataGridView.ColumnHeadersDefaultCellStyle.BackColor = colors["BackColor"];
             dataGridView.ColumnHeadersDefaultCellStyle.ForeColor = colors["TextColor"];
-            dataGridView.ColumnHeadersDefaultCellStyle.SelectionForeColor = colors["SelectionColor"];
+            dataGridView.ColumnHeadersDefaultCellStyle.SelectionForeColor = colors["SelectionForeColor"];
             dataGridView.ColumnHeadersDefaultCellStyle.SelectionBackColor = colors["SelectionBackColor"];
         }
         private void ChangeThemePanelByColor(Panel panel, Color backColor, bool isDark)
