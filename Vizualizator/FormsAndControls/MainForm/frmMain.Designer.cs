@@ -1,4 +1,4 @@
-﻿namespace Vizualizator
+﻿namespace FormsAndControls.MainForm.Vizualizator
 {
     partial class frmMain
     {
@@ -29,19 +29,18 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.messageTextBox = new System.Windows.Forms.TextBox();
             this.btnResetFire = new System.Windows.Forms.Button();
             this.btnOffBd = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnConvertDB = new System.Windows.Forms.Button();
             this.btnSelectDb = new System.Windows.Forms.Button();
             this.stateText = new System.Windows.Forms.Label();
             this.stateLabel = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnWorkWithComPort = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.btn = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -59,14 +58,14 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.offOSU = new System.Windows.Forms.Label();
             this.flame = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.shortCircuit = new System.Windows.Forms.Label();
+            this.countFlameLbl = new System.Windows.Forms.Label();
             this.disconnectOSU = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.countBreaksLbl = new System.Windows.Forms.Label();
+            this.Breaks = new System.Windows.Forms.Label();
+            this.countShortCircuitLbl = new System.Windows.Forms.Label();
+            this.countDisconnectOsuLbl = new System.Windows.Forms.Label();
+            this.countOffOsu = new System.Windows.Forms.Label();
             this.pnlState = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -92,17 +91,25 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.panel1.Controls.Add(this.messageTextBox);
             this.panel1.Controls.Add(this.btnResetFire);
             this.panel1.Controls.Add(this.btnOffBd);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.btnConvertDB);
             this.panel1.Controls.Add(this.btnSelectDb);
-            this.panel1.Location = new System.Drawing.Point(0, 659);
+            this.panel1.Location = new System.Drawing.Point(0, 690);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(793, 69);
             this.panel1.TabIndex = 0;
+            // 
+            // messageTextBox
+            // 
+            this.messageTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
+            this.messageTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.messageTextBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.messageTextBox.Location = new System.Drawing.Point(346, 24);
+            this.messageTextBox.Name = "messageTextBox";
+            this.messageTextBox.Size = new System.Drawing.Size(131, 26);
+            this.messageTextBox.TabIndex = 7;
             // 
             // btnResetFire
             // 
@@ -134,36 +141,6 @@
             this.btnOffBd.Text = "Отключить БД";
             this.btnOffBd.UseVisualStyleBackColor = false;
             this.btnOffBd.Click += new System.EventHandler(this.btnOnData_Click);
-            // 
-            // textBox3
-            // 
-            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox3.Location = new System.Drawing.Point(409, 24);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(68, 22);
-            this.textBox3.TabIndex = 4;
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.Location = new System.Drawing.Point(377, 24);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(26, 22);
-            this.textBox2.TabIndex = 3;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(346, 24);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(25, 22);
-            this.textBox1.TabIndex = 2;
             // 
             // btnConvertDB
             // 
@@ -227,7 +204,9 @@
             // 
             // panel4
             // 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.panel4.Controls.Add(this.btnWorkWithComPort);
             this.panel4.Controls.Add(this.button7);
             this.panel4.Controls.Add(this.btn);
             this.panel4.Controls.Add(this.button5);
@@ -237,15 +216,33 @@
             this.panel4.Controls.Add(this.button1);
             this.panel4.Controls.Add(this.dataGridView1);
             this.panel4.Controls.Add(this.groupBox1);
-            this.panel4.Location = new System.Drawing.Point(792, 26);
+            this.panel4.Location = new System.Drawing.Point(792, 21);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(411, 702);
+            this.panel4.Size = new System.Drawing.Size(420, 738);
             this.panel4.TabIndex = 2;
+            // 
+            // btnWorkWithComPort
+            // 
+            this.btnWorkWithComPort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.btnWorkWithComPort.FlatAppearance.BorderSize = 0;
+            this.btnWorkWithComPort.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
+            this.btnWorkWithComPort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWorkWithComPort.Font = new System.Drawing.Font("JetBrains Mono", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnWorkWithComPort.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(236)))));
+            this.btnWorkWithComPort.Image = ((System.Drawing.Image)(resources.GetObject("btnWorkWithComPort.Image")));
+            this.btnWorkWithComPort.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnWorkWithComPort.Location = new System.Drawing.Point(1, 672);
+            this.btnWorkWithComPort.Name = "btnWorkWithComPort";
+            this.btnWorkWithComPort.Size = new System.Drawing.Size(407, 62);
+            this.btnWorkWithComPort.TabIndex = 13;
+            this.btnWorkWithComPort.Text = "Настройка подключение к COM-порту";
+            this.btnWorkWithComPort.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnWorkWithComPort.UseVisualStyleBackColor = false;
+            this.btnWorkWithComPort.Click += new System.EventHandler(this.btnWorkWithComPort_Click);
             // 
             // button7
             // 
-            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.button7.FlatAppearance.BorderSize = 0;
             this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
@@ -254,9 +251,9 @@
             this.button7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(236)))));
             this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
             this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button7.Location = new System.Drawing.Point(201, 633);
+            this.button7.Location = new System.Drawing.Point(200, 618);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(207, 68);
+            this.button7.Size = new System.Drawing.Size(207, 55);
             this.button7.TabIndex = 12;
             this.button7.Text = "Удалить запись";
             this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -264,8 +261,7 @@
             // 
             // btn
             // 
-            this.btn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.btn.FlatAppearance.BorderSize = 0;
             this.btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
@@ -274,9 +270,9 @@
             this.btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(236)))));
             this.btn.Image = ((System.Drawing.Image)(resources.GetObject("btn.Image")));
             this.btn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn.Location = new System.Drawing.Point(3, 633);
+            this.btn.Location = new System.Drawing.Point(3, 618);
             this.btn.Name = "btn";
-            this.btn.Size = new System.Drawing.Size(194, 68);
+            this.btn.Size = new System.Drawing.Size(194, 55);
             this.btn.TabIndex = 11;
             this.btn.Text = "Показать всё";
             this.btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -284,85 +280,80 @@
             // 
             // button5
             // 
-            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.button5.FlatAppearance.BorderSize = 0;
             this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("JetBrains Mono", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(236)))));
-            this.button5.Location = new System.Drawing.Point(316, 277);
+            this.button5.Location = new System.Drawing.Point(316, 275);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(85, 35);
+            this.button5.Size = new System.Drawing.Size(85, 26);
             this.button5.TabIndex = 10;
             this.button5.Text = "Нет приёма";
             this.button5.UseVisualStyleBackColor = false;
             // 
             // button4
             // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("JetBrains Mono", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(236)))));
-            this.button4.Location = new System.Drawing.Point(69, 277);
+            this.button4.Location = new System.Drawing.Point(69, 275);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(85, 35);
+            this.button4.Size = new System.Drawing.Size(85, 26);
             this.button4.TabIndex = 9;
             this.button4.Text = "Отключенны";
             this.button4.UseVisualStyleBackColor = false;
             // 
             // button3
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("JetBrains Mono", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(236)))));
-            this.button3.Location = new System.Drawing.Point(217, 277);
+            this.button3.Location = new System.Drawing.Point(217, 275);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(97, 35);
+            this.button3.Size = new System.Drawing.Size(97, 26);
             this.button3.TabIndex = 8;
             this.button3.Text = "К.замыкания";
             this.button3.UseVisualStyleBackColor = false;
             // 
             // button2
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("JetBrains Mono", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(236)))));
-            this.button2.Location = new System.Drawing.Point(157, 277);
+            this.button2.Location = new System.Drawing.Point(157, 275);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(57, 35);
+            this.button2.Size = new System.Drawing.Size(57, 26);
             this.button2.TabIndex = 7;
             this.button2.Text = "Обрывы";
             this.button2.UseVisualStyleBackColor = false;
             // 
             // button1
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("JetBrains Mono", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(236)))));
-            this.button1.Location = new System.Drawing.Point(9, 278);
+            this.button1.Location = new System.Drawing.Point(9, 276);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(57, 35);
+            this.button1.Size = new System.Drawing.Size(57, 26);
             this.button1.TabIndex = 6;
             this.button1.Text = "Пожары";
             this.button1.UseVisualStyleBackColor = false;
@@ -371,19 +362,18 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("JetBrains Mono", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(236)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(236)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("JetBrains Mono", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(236)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(236)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.TypeASU,
@@ -391,23 +381,23 @@
             this.NumberPPK,
             this.AboutZone,
             this.Date});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(236)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(236)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(236)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(236)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.dataGridView1.Location = new System.Drawing.Point(3, 316);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 308);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(405, 313);
+            this.dataGridView1.Size = new System.Drawing.Size(404, 304);
             this.dataGridView1.TabIndex = 2;
             // 
             // TypeASU
@@ -447,15 +437,14 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.pnlState);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox1.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(236)))));
-            this.groupBox1.Location = new System.Drawing.Point(3, 16);
+            this.groupBox1.Location = new System.Drawing.Point(3, 14);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(405, 257);
             this.groupBox1.TabIndex = 1;
@@ -468,14 +457,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.offOSU);
             this.groupBox2.Controls.Add(this.flame);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.shortCircuit);
+            this.groupBox2.Controls.Add(this.countFlameLbl);
             this.groupBox2.Controls.Add(this.disconnectOSU);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.countBreaksLbl);
+            this.groupBox2.Controls.Add(this.Breaks);
+            this.groupBox2.Controls.Add(this.countShortCircuitLbl);
+            this.groupBox2.Controls.Add(this.countDisconnectOsuLbl);
+            this.groupBox2.Controls.Add(this.countOffOsu);
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(236)))));
             this.groupBox2.Location = new System.Drawing.Point(6, 78);
@@ -512,30 +501,30 @@
             this.flame.Text = "    Пожаров:  ";
             this.flame.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label9
+            // shortCircuit
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("JetBrains Mono", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label9.Image = ((System.Drawing.Image)(resources.GetObject("label9.Image")));
-            this.label9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label9.Location = new System.Drawing.Point(16, 88);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(250, 22);
-            this.label9.TabIndex = 8;
-            this.label9.Text = "    Короткого замыкания:";
+            this.shortCircuit.AutoSize = true;
+            this.shortCircuit.Font = new System.Drawing.Font("JetBrains Mono", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.shortCircuit.Image = ((System.Drawing.Image)(resources.GetObject("shortCircuit.Image")));
+            this.shortCircuit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.shortCircuit.Location = new System.Drawing.Point(16, 88);
+            this.shortCircuit.Name = "shortCircuit";
+            this.shortCircuit.Size = new System.Drawing.Size(250, 22);
+            this.shortCircuit.TabIndex = 8;
+            this.shortCircuit.Text = "    Короткого замыкания:";
             // 
-            // label2
+            // countFlameLbl
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(84)))), ((int)(((byte)(84)))));
-            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label2.Location = new System.Drawing.Point(294, 28);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(23, 25);
-            this.label2.TabIndex = 1;
-            this.label2.Tag = "2";
-            this.label2.Text = "0";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.countFlameLbl.AutoSize = true;
+            this.countFlameLbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(84)))), ((int)(((byte)(84)))));
+            this.countFlameLbl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.countFlameLbl.Location = new System.Drawing.Point(294, 28);
+            this.countFlameLbl.Name = "countFlameLbl";
+            this.countFlameLbl.Size = new System.Drawing.Size(23, 25);
+            this.countFlameLbl.TabIndex = 1;
+            this.countFlameLbl.Tag = "2";
+            this.countFlameLbl.Text = "0";
+            this.countFlameLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // disconnectOSU
             // 
@@ -549,65 +538,65 @@
             this.disconnectOSU.TabIndex = 9;
             this.disconnectOSU.Text = "    Нет приёма от АСУ:";
             // 
-            // label3
+            // countBreaksLbl
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
-            this.label3.Location = new System.Drawing.Point(294, 56);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(23, 25);
-            this.label3.TabIndex = 2;
-            this.label3.Tag = "3";
-            this.label3.Text = "0";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.countBreaksLbl.AutoSize = true;
+            this.countBreaksLbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
+            this.countBreaksLbl.Location = new System.Drawing.Point(294, 56);
+            this.countBreaksLbl.Name = "countBreaksLbl";
+            this.countBreaksLbl.Size = new System.Drawing.Size(23, 25);
+            this.countBreaksLbl.TabIndex = 2;
+            this.countBreaksLbl.Tag = "3";
+            this.countBreaksLbl.Text = "0";
+            this.countBreaksLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label8
+            // Breaks
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("JetBrains Mono", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.Image = ((System.Drawing.Image)(resources.GetObject("label8.Image")));
-            this.label8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label8.Location = new System.Drawing.Point(16, 59);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(130, 22);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "    Обрывов:";
+            this.Breaks.AutoSize = true;
+            this.Breaks.Font = new System.Drawing.Font("JetBrains Mono", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Breaks.Image = ((System.Drawing.Image)(resources.GetObject("Breaks.Image")));
+            this.Breaks.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Breaks.Location = new System.Drawing.Point(16, 59);
+            this.Breaks.Name = "Breaks";
+            this.Breaks.Size = new System.Drawing.Size(130, 22);
+            this.Breaks.TabIndex = 7;
+            this.Breaks.Text = "    Обрывов:";
             // 
-            // label4
+            // countShortCircuitLbl
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(160)))), ((int)(((byte)(220)))));
-            this.label4.Location = new System.Drawing.Point(294, 84);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(23, 25);
-            this.label4.TabIndex = 3;
-            this.label4.Tag = "4";
-            this.label4.Text = "0";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.countShortCircuitLbl.AutoSize = true;
+            this.countShortCircuitLbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(160)))), ((int)(((byte)(220)))));
+            this.countShortCircuitLbl.Location = new System.Drawing.Point(294, 84);
+            this.countShortCircuitLbl.Name = "countShortCircuitLbl";
+            this.countShortCircuitLbl.Size = new System.Drawing.Size(23, 25);
+            this.countShortCircuitLbl.TabIndex = 3;
+            this.countShortCircuitLbl.Tag = "4";
+            this.countShortCircuitLbl.Text = "0";
+            this.countShortCircuitLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label5
+            // countDisconnectOsuLbl
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(85)))), ((int)(((byte)(170)))));
-            this.label5.Location = new System.Drawing.Point(294, 112);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(23, 25);
-            this.label5.TabIndex = 4;
-            this.label5.Tag = "5";
-            this.label5.Text = "0";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.countDisconnectOsuLbl.AutoSize = true;
+            this.countDisconnectOsuLbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(85)))), ((int)(((byte)(170)))));
+            this.countDisconnectOsuLbl.Location = new System.Drawing.Point(294, 112);
+            this.countDisconnectOsuLbl.Name = "countDisconnectOsuLbl";
+            this.countDisconnectOsuLbl.Size = new System.Drawing.Size(23, 25);
+            this.countDisconnectOsuLbl.TabIndex = 4;
+            this.countDisconnectOsuLbl.Tag = "5";
+            this.countDisconnectOsuLbl.Text = "0";
+            this.countDisconnectOsuLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label6
+            // countOffOsu
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            this.label6.Location = new System.Drawing.Point(294, 140);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(23, 25);
-            this.label6.TabIndex = 5;
-            this.label6.Tag = "6";
-            this.label6.Text = "0";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.countOffOsu.AutoSize = true;
+            this.countOffOsu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.countOffOsu.Location = new System.Drawing.Point(294, 140);
+            this.countOffOsu.Name = "countOffOsu";
+            this.countOffOsu.Size = new System.Drawing.Size(23, 25);
+            this.countOffOsu.TabIndex = 5;
+            this.countOffOsu.Tag = "6";
+            this.countOffOsu.Text = "0";
+            this.countOffOsu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnlState
             // 
@@ -706,7 +695,7 @@
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-1, 35);
+            this.pictureBox1.Location = new System.Drawing.Point(3, 57);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(787, 597);
             this.pictureBox1.TabIndex = 3;
@@ -723,7 +712,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1203, 728);
+            this.ClientSize = new System.Drawing.Size(1203, 759);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel4);
@@ -757,9 +746,6 @@
         private Panel panel2;
         private Button btnConvertDB;
         private Button btnSelectDb;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox1;
         private Button btnResetFire;
         private Button btnOffBd;
         private PictureBox pictureBox1;
@@ -767,14 +753,14 @@
         private GroupBox groupBox2;
         private Label offOSU;
         private Label flame;
-        private Label label9;
-        private Label label2;
+        private Label shortCircuit;
+        private Label countFlameLbl;
         private Label disconnectOSU;
-        private Label label3;
-        private Label label8;
-        private Label label4;
-        private Label label5;
-        private Label label6;
+        private Label countBreaksLbl;
+        private Label Breaks;
+        private Label countShortCircuitLbl;
+        private Label countDisconnectOsuLbl;
+        private Label countOffOsu;
         private Panel pnlState;
         private Label label1;
         private DataGridView dataGridView1;
@@ -797,6 +783,8 @@
         private Button themeButton;
         private Label stateLabel;
         private Label stateText;
+        private TextBox messageTextBox;
+        private Button btnWorkWithComPort;
 
         public Button BtnConvertDB { get => btnConvertDB; set => btnConvertDB = value; }
         public Button BtnSelectDb { get => btnSelectDb; set => btnSelectDb = value; }
@@ -805,7 +793,7 @@
         public Label OffOSU { get => offOSU; set => offOSU = value; }
         public Label Flame { get => flame; set => flame = value; }
         public Label DisconnectOSU { get => disconnectOSU; set => disconnectOSU = value; }
-        public Label Label8 { get => label8; set => label8 = value; }
-        public Label Label9 { get => label9; set => label9 = value; }
+        public Label Label8 { get => Breaks; set => Breaks = value; }
+        public Label Label9 { get => shortCircuit; set => shortCircuit = value; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Vizualizator.Properties;
+﻿using FormsAndControls.MainForm.Vizualizator;
+using Vizualizator.Properties;
 using Vizualizator.Theme.Images.ImageBinder.Interfaces;
 
 namespace Vizualizator.Theme.Images.ImageBinder

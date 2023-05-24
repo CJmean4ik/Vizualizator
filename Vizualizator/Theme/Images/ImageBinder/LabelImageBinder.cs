@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using FormsAndControls.MainForm.Vizualizator;
 using Vizualizator.Properties;
 using Vizualizator.Theme.Images.ImageBinder.Interfaces;
 

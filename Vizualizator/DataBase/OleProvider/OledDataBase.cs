@@ -42,9 +42,8 @@ namespace Vizualizator.DataBase.OleProvider
                 {
                     await OleDb.OpenAsync();
                     return;
-
                 }
-                catch (OleDbException ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message + "\n Не удалось подключиться, проверьте: существует ли такой файл");
                 }
@@ -67,7 +66,7 @@ namespace Vizualizator.DataBase.OleProvider
                 }
               
             }
-            catch (OleDbException ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message + "\n Не удалось отключиться от БД");
             }

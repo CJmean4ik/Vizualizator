@@ -1,3 +1,5 @@
+using FormsAndControls.MainForm.Vizualizator;
+
 namespace Vizualizator
 {
     internal static class Program

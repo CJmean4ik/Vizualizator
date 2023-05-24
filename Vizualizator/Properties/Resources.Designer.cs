@@ -203,6 +203,26 @@ namespace Vizualizator.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap settings_dark {
+            get {
+                object obj = ResourceManager.GetObject("settings_dark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap settings_light {
+            get {
+                object obj = ResourceManager.GetObject("settings_light", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap toggle_off_d {
             get {
                 object obj = ResourceManager.GetObject("toggle_off_d", resourceCulture);

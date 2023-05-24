@@ -1,10 +1,10 @@
 ﻿namespace Vizualizator.Theme
 {
-    internal interface IThemeChanger<T> where T : class, new()
+    public interface IThemeChanger<T> where T : class, new()
     {
         void ChangeToDark(T form);
         void ChangeToLight(T form);
-        void ChangeToDarkImage();
-        void ChangeToLightImage();
     }
+
+   
 }
