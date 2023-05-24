@@ -5,6 +5,7 @@ using Vizualizator.DataBase.Repository.ImplementRepositories;
 using Vizualizator.FormsAndControls.Controls;
 using Vizualizator.Theme;
 using Vizualizator.Theme.Images.ImageBinder;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace FormsAndControls.MainForm.Vizualizator
 {
@@ -65,26 +66,44 @@ namespace FormsAndControls.MainForm.Vizualizator
 
         #endregion
 
+        /// <summary>
+        /// Событие по закрытию главное формы 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnClose_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Событие по выборке БД
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void btnSelectDB_Click(object sender, EventArgs e)
         {
             DataBase = new OleDataBase();
+
             selectDataBaseFile.ShowDialog();
             DataBase.FilePath = selectDataBaseFile.FileName;
-            DataBase.CreateConnectionString();
 
+            DataBase.CreateConnectionString();
             DataBase.CreateOleDbConnection();
 
             await DataBase.OpenConnectAsync();
-            stateText.ForeColor = Color.FromArgb(76, 175, 80);
-            stateText.Text = $"Подключен к {selectDataBaseFile.SafeFileName}";
+
+            string displayedStatus = $"Подключен к {selectDataBaseFile.SafeFileName}";
+            ChangeLabelState(Color.FromArgb(76, 175, 80), displayedStatus);
 
             asuModulerepository = new ASUModuleRepository(DataBase.OleDb);
         }
+
+        /// <summary>
+        /// Событие по изменение темы формы
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void themeButton_Click(object sender, EventArgs e)
         {
             if (!isLightTheme)
@@ -101,8 +120,13 @@ namespace FormsAndControls.MainForm.Vizualizator
                 isLightTheme = false;
                 return;
             }
-
         }
+
+        /// <summary>
+        /// Событие по отключению от БД
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void btnOnData_Click(object sender, EventArgs e)
         {
             if (DataBase == null)
@@ -112,11 +136,19 @@ namespace FormsAndControls.MainForm.Vizualizator
             }
           
             await DataBase.CloseConnectAsync();
-            stateText.ForeColor = Color.FromArgb(255, 128, 0);
-            stateText.Text = "В ожидании";
+
+            ChangeLabelState(Color.FromArgb(255, 128, 0), "В ожидании");
+
             dataGridView2.Rows.Clear();
+
             DataBase = null;
         }
+
+        /// <summary>
+        /// Событие которое позволяет открыть форму для настройки подключения к COM-порту`у
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnWorkWithComPort_Click(object sender, EventArgs e)
         {
             if (_comPortSetting == null) return;
@@ -128,6 +160,10 @@ namespace FormsAndControls.MainForm.Vizualizator
 
             _comPortSetting.Show();
         }
+
+        /// <summary>
+        /// Переключатель активности формы
+        /// </summary>
         private void SwitchEnable()
         {
             if (this.Enabled == true)
@@ -139,16 +175,31 @@ namespace FormsAndControls.MainForm.Vizualizator
             this.Enabled = true;
         }
 
+        /// <summary>
+        /// Изменяет цвет и контент строки, которая представляет состояние приложения
+        /// </summary>
+        /// <param name="color"></param>
+        /// <param name="displayedStatus"></param>
+        private void ChangeLabelState(Color color, string displayedStatus)
+        {
+            stateText.ForeColor = color;
+            stateText.Text = displayedStatus ;
+        }
 
-
+        /// <summary>
+        /// Метод по отображению данных из БД на dataGridView
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void btnConvertDB_Click(object sender, EventArgs e)
         {
+            //Показать таблицу, если она уже была заполненой
             if (_isAddedData)
-            {
+            {             
                 ShowConvertDataPanel();
                 return;
             }
-
+            //Иначе заполнить её 
             try
             {
                 if (asuModulerepository == null)
@@ -156,8 +207,8 @@ namespace FormsAndControls.MainForm.Vizualizator
                       MessageBox.Show("Репозиторий который должен был считать данные с таблицы, не был проинициализирован.\nПроверьте" +
                     "Подключение к БД ");
                     return;
-                }
-                
+                }            
+                //Получаем список сущностей для отображения их в dataGridView
                 var models = await Task.Run(() => asuModulerepository.GetAll());
 
                 if (models == null)
@@ -165,8 +216,11 @@ namespace FormsAndControls.MainForm.Vizualizator
                     MessageBox.Show("Нет данных для заполения DataGridView (Таблица)");
                     return;
                 }
+
+                //Добавляем их всех в dataGridView
                 dataGridView2.Rows.Add(models.Count);
                 await Task.Run(() => InsertDataToCells(models));
+
                 _isAddedData = true;
                 ShowConvertDataPanel();
             }
@@ -177,11 +231,15 @@ namespace FormsAndControls.MainForm.Vizualizator
             }
 
         }
+
+        /// <summary>
+        /// Метод, который вставляет данные из списка сущностей в dataGridView
+        /// </summary>
+        /// <param name="models"></param>
         private void InsertDataToCells(List<FullASUModule> models)
         {
             int COUT_ROWS = models.Count;
            
-
             for (int j = 0; j < COUT_ROWS; j++)
             {     
                 dataGridView2.Rows[j].Cells[0].Value = models[j].Code;
@@ -204,12 +262,14 @@ namespace FormsAndControls.MainForm.Vizualizator
   
         }
 
+        /// <summary>
+        /// Убирает панель, которая содержит dataGridView
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button6_Click(object sender, EventArgs e)
         {
             HideConvertDataPanel();
-
-
-
         }
 
         private void label2_Click(object sender, EventArgs e)

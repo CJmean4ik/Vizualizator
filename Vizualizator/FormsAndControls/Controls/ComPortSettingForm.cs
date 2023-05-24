@@ -31,6 +31,11 @@ namespace Vizualizator.FormsAndControls.Controls
             btnClose.Enabled = false;
 
         }
+
+        /// <summary>
+        /// Метод для измение темы данной формы
+        /// </summary>
+        /// <param name="isLightTheme"></param>
         public void ChangeTheme(bool isLightTheme)
         {
             if (isLightTheme)
@@ -41,6 +46,10 @@ namespace Vizualizator.FormsAndControls.Controls
             themeChanger.ChangeToDark(this);
         }
 
+        /// <summary>
+        /// Изменяет состояние формы при повторном её отображении
+        /// </summary>
+        /// <param name="isConnected"></param>
         public void SwitcherStateForm(bool? isConnected)
         {
             if (isConnected == true)
@@ -58,12 +67,19 @@ namespace Vizualizator.FormsAndControls.Controls
             }
         }
 
+        /// <summary>
+        /// Событие по закрытию этой формы
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CloseBtn_Click(object sender, EventArgs e)
         {           
             this.Hide();
             Switcher.Invoke();
         }
 
+        #region DraggingMethods
+      
         private void panel2_MouseUp(object sender, MouseEventArgs e)
         {
             isMousePress = false;
@@ -90,7 +106,14 @@ namespace Vizualizator.FormsAndControls.Controls
                     _formStartPoint.Y + cursorOffsetPoint.Y);
             }
         }
+        #endregion
 
+
+        /// <summary>
+        /// Событие, которое обновляет список доступных COM-порт'ов
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             cmbxComPorts.Items.Clear();
@@ -98,24 +121,34 @@ namespace Vizualizator.FormsAndControls.Controls
 
         }
 
+        /// <summary>
+        /// Событие, которе обрабатывает подключени к выбраному COM-порт'у
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnOnCom_Click(object sender, EventArgs e)
         {
+
             bool isComplete = InitialComPort();
 
             if (!isComplete) return;
 
             _comPortWorker.ConnectToPort(out bool isSuccessful);
             if (!isSuccessful) return;
-            
 
-            
-            lblState.Text = $"Подключен к порту: {_comPortWorker.ComPort.PortName}";
-            lblState.ForeColor = Color.FromArgb(76, 175, 80);
+            string displayStatus = $"Подключен к порту: {_comPortWorker.ComPort.PortName}";
+            ChangeLabelState(Color.FromArgb(76, 175, 80), displayStatus);
+
             btnOnCom.Enabled = false;
             btnClose.Enabled = true;
 
 
         }
+
+        /// <summary>
+        /// Инициализирует обьект, который отвечает за работу с COM-порт'ом
+        /// </summary>
+        /// <returns></returns>
         private bool InitialComPort()
         {
             _comPortWorker = new ComPortWorker
@@ -144,6 +177,11 @@ namespace Vizualizator.FormsAndControls.Controls
             return true;
         }
 
+        /// <summary>
+        /// Отключается от порта 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnOffCom_Click(object sender, EventArgs e)
         {
             _comPortWorker.DisconnectFromPort(out bool isSuccessful);
@@ -151,15 +189,22 @@ namespace Vizualizator.FormsAndControls.Controls
             if (!isSuccessful)
                 return;
 
-            lblState.Text = $"Не подключен";
-            lblState.ForeColor = Color.FromArgb(255, 84, 84);
             btnOnCom.Enabled = true;
+            ChangeLabelState(Color.FromArgb(255, 84, 84), $"Не подключен");
+
             btnClose.Enabled = false;
         }
 
-        private void lblState_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Изменяет цвет и контент строки, которая представляет состояние приложения
+        /// </summary>
+        /// <param name="color"></param>
+        /// <param name="displayedStatus"></param>
+        private void ChangeLabelState(Color color, string displayedStatus)
         {
-
+            stateText.ForeColor = color;
+            stateText.Text = displayedStatus;
         }
+
     }
 }

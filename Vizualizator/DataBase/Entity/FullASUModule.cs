@@ -1,5 +1,8 @@
 ﻿namespace Vizualizator.DataBase.Entity
 {
+    /// <summary>
+    /// Сущность, которая представляет таблицу "Описание_АСУ"
+    /// </summary>
     internal class FullASUModule : ASUModule
     {
         public string Code { get; set; }

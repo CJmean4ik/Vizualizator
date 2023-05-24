@@ -4,6 +4,9 @@ using Vizualizator.Theme.Paints;
 
 namespace Vizualizator.Theme
 {
+    /// <summary>
+    /// Класс предназначенный для измения темы переданой формы
+    /// </summary>
     internal class FormThemeChanger : IThemeChanger<Control>, IImageThemeChanger
     {
         private readonly DarkPaint _darkPaint;
@@ -24,6 +27,10 @@ namespace Vizualizator.Theme
             _lightPaint = new LightPaint();
         }
 
+        /// <summary>
+        /// Меняет цвет формы и её копонетов на чёрную тему 
+        /// </summary>
+        /// <param name="form">Комонент который поддаёться изменению темы</param>
         public void ChangeToDark(Control form)
         {
             if (form == null) return;
@@ -59,6 +66,10 @@ namespace Vizualizator.Theme
                     ChangeThemeTextBoxByColor(textBox, _darkPaint.TextBoxDark, _darkPaint.TextDark);
             }
         }
+
+        /// <summary>
+        /// Заменяет изображения компонентов на тёмный аналог 
+        /// </summary>
         public void ChangeToDarkImage()
         {
             foreach (var item in _buttonImage)
@@ -76,6 +87,10 @@ namespace Vizualizator.Theme
             }
         }
 
+        /// <summary>
+        /// Меняет цвет формы и её копонетов на светлую тему 
+        /// </summary>
+        /// <param name="form">Комонент который поддаёться изменению темы</param>
         public void ChangeToLight(Control form)
         {
             if (form == null) return;
@@ -116,6 +131,10 @@ namespace Vizualizator.Theme
 
 
         }
+
+        /// <summary>
+        /// Заменяет изображения компонентов на светлый аналог
+        /// </summary>
         public void ChangeToLightImage()
         {
             foreach (var item in _buttonImage)
@@ -133,7 +152,9 @@ namespace Vizualizator.Theme
             }
         }
 
+        #region Методы для изменения темы Компонетов
 
+        //Методы, которые меняют тему компонента в зависимости от переданного цвета
         private void ChangeThemeButtonByColor(Button button, Color backColor, Color flatColor, Color foreColor)
         {
             string EMTY_STRING = "";
@@ -213,6 +234,15 @@ namespace Vizualizator.Theme
             return;
 
         }
+
+        #endregion
+
+
+        /// <summary>
+        /// Пропускает изменения темы тектовых полей, которые соответсвуют заданным индексам
+        /// </summary>
+        /// <param name="tag">Тег текстового поля</param>
+        /// <returns>Значение, указывающие не должен ли компонент поддаваться для изменения темы</returns>
         private bool SkipThemeChangesForLabel(int tag)
         {
             int TAG_LABEL_FLAME = 2;

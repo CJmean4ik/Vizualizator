@@ -1,5 +1,8 @@
 ﻿namespace Vizualizator.DataBase.Entity
 {
+    /// <summary>
+    /// Сущность которая представляет собою набор данных от ППК
+    /// </summary>
     public class ASUModule
     {
         public string TypeASU { get; set; }

@@ -1,5 +1,8 @@
 ﻿namespace Vizualizator.Theme.Paints
 {
+    /// <summary>
+    /// Представляет собою контейнер для цветов под тёмную тему
+    /// </summary>
     public class DarkPaint
     {
         public Color PanelDark { get; init; }
