@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using Vizualizator.DataBase.OleProvider;
 using Vizualizator.FormsAndControls.Controls;
 using Vizualizator.Theme;
@@ -110,8 +111,9 @@ namespace FormsAndControls.MainForm.Vizualizator
         }
         private void btnWorkWithComPort_Click(object sender, EventArgs e)
         {
-            if (_comPortSetting == null)
+            if (_comPortSetting == null) return;
 
+            SwitchEnable();
             _comPortSetting.SwitcherStateForm(_comPortSetting._comPortWorker?.ComPort?.IsOpen);
 
             _comPortSetting.ChangeTheme(isLightTheme);
@@ -125,6 +127,7 @@ namespace FormsAndControls.MainForm.Vizualizator
                 this.Enabled = false;
                 return;
             }
+            this.Activate();
             this.Enabled = true;
         }
     }

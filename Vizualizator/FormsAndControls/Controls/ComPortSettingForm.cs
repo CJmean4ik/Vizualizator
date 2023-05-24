@@ -29,7 +29,7 @@ namespace Vizualizator.FormsAndControls.Controls
         {
             cmbxComPorts.Items.AddRange(SerialPort.GetPortNames());
             btnClose.Enabled = false;
-            Switcher.Invoke();
+
         }
         public void ChangeTheme(bool isLightTheme)
         {
@@ -59,9 +59,9 @@ namespace Vizualizator.FormsAndControls.Controls
         }
 
         private void CloseBtn_Click(object sender, EventArgs e)
-        {
-            Switcher.Invoke();
+        {           
             this.Hide();
+            Switcher.Invoke();
         }
 
         private void panel2_MouseUp(object sender, MouseEventArgs e)
@@ -100,11 +100,12 @@ namespace Vizualizator.FormsAndControls.Controls
 
         private void btnOnCom_Click(object sender, EventArgs e)
         {
-            InitialComPort();
+            bool isComplete = InitialComPort();
 
+            if (!isComplete) return;
+                       
             if (!_comPortWorker.TryConnectToPort())
                 return;
-
 
             lblState.Text = $"Подключен к порту: {_comPortWorker.ComPort.PortName}";
             lblState.ForeColor = Color.FromArgb(76, 175, 80);
@@ -113,7 +114,7 @@ namespace Vizualizator.FormsAndControls.Controls
 
 
         }
-        private void InitialComPort()
+        private bool InitialComPort()
         {
             _comPortWorker = new ComPortWorker
              (
@@ -133,8 +134,12 @@ namespace Vizualizator.FormsAndControls.Controls
                !Enum.TryParse<StopBits>(cmbxStopBits.Text, out StopBits stopBits)
                ? StopBits.One
                : stopBits
-
              );
+
+            if (!ComPortWorker.isInitialize)           
+                return false;
+
+            return true;
         }
 
         private void btnOffCom_Click(object sender, EventArgs e)

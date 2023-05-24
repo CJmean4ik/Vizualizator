@@ -5,7 +5,7 @@ namespace Vizualizator.COM
     public class ComPortWorker
     {
         public SerialPort ComPort { get; set; }
-
+        public static bool isInitialize { get; set; }
         public ComPortWorker(string portName, int transferRate, int dataBit, Parity parity = Parity.None, StopBits stopBits = StopBits.One)
         {
             ComPort = new SerialPort();
@@ -23,14 +23,17 @@ namespace Vizualizator.COM
             if (portNames.Length == 0 || comparedPort == "")
             {
                 MessageBox.Show("Value cannot be empty ");
+                isInitialize = false;
                 return false;
             }
 
             for (int i = 0; i < portNames.Length; i++)
             {
                 if (portNames[i] == comparedPort)
+                    isInitialize = true;
                     return true;
             }
+            isInitialize = false;
             return false;
         }
         public bool TrySendMessage(string message)
